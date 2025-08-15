@@ -4,11 +4,10 @@
   "description": "AI-powered Indian news summarizer app",
   "main": "index.js",
   "scripts": {
-    "start": "node server.js",
-    "build": "react-scripts build",
-    "test": "react-scripts test",
-    "eject": "react-scripts eject"
-  },
+  "dev": "vite",
+  "build": "vite build",
+  "start": "vite preview"
+},
   "dependencies": {
     "axios": "^1.6.0",
     "react": "^18.2.0",
