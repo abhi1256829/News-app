@@ -11,6 +11,10 @@ app.use(cors());
 const PORT = process.env.PORT || 10000;
 const API_KEY = process.env.NEWS_API_KEY; // Put your NewsAPI key in a .env file!
 
+// Add the root route here
+app.get('/', (req, res) => {
+  res.send('News Nuggets Backend is running.');
+});
 
 app.get('/api/news', async (req, res) => {
   try {
