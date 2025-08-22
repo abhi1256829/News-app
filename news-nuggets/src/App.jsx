@@ -3,10 +3,11 @@ import "./App.css";
 import axios from "axios";
 
 // const API_KEY = import.meta.env.VITE_NEWS_API_KEY; // <-- set in your .env
+const BACKEND_URL = 'https://news-nuggets-backend.onrender.com/';
 
 const fetchIndianNews = async () => {
   try {
-    const res = await axios.get('http://localhost:10000/api/news');
+    const res = await axios.get(`${BACKEND_URL}/api/news`);
 // Assume same origin for simplicity
     return res.data.articles || [];
   } catch (err) {
