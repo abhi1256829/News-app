@@ -2,18 +2,29 @@ import React, { useEffect, useState } from "react";
 import "./App.css";
 import axios from "axios";
 
-const API_KEY = import.meta.env.VITE_NEWS_API_KEY; // <-- set in your .env
+// const API_KEY = import.meta.env.VITE_NEWS_API_KEY; // <-- set in your .env
 
 const fetchIndianNews = async () => {
   try {
-    const url = `https://newsapi.org/v2/everything?q=india&sortBy=publishedAt&pageSize=28&apiKey=${API_KEY}`;
-    const res = await axios.get(url);
+    const res = await axios.get('http://localhost:10000/api/news');
+// Assume same origin for simplicity
     return res.data.articles || [];
   } catch (err) {
     console.log('Error fetching news:', err);
     return [];
   }
 };
+
+// const fetchIndianNews = async () => {
+//   try {
+//     const url = `https://newsapi.org/v2/everything?q=india&sortBy=publishedAt&pageSize=28&apiKey=${API_KEY}`;
+//     const res = await axios.get(url);
+//     return res.data.articles || [];
+//   } catch (err) {
+//     console.log('Error fetching news:', err);
+//     return [];
+//   }
+// };
 
 // Component for showing/hiding scroll to top button
 function ScrollToTopScript() {
